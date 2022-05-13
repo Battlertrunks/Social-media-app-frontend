@@ -8,10 +8,16 @@ import { HomeRouteComponent } from './home-route/home-route.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostService } from './services/posts.service';
 import { PostFormRouteComponent } from './post-form-route/post-form-route.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HomeRouteComponent, NavbarComponent, PostFormRouteComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HomeRouteComponent,
+    NavbarComponent,
+    PostFormRouteComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [PostService],
   bootstrap: [AppComponent],
 })

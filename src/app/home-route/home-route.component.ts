@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import Post from '../models/post';
 import { PostService } from '../services/posts.service';
 
@@ -16,8 +16,8 @@ export class HomeRouteComponent implements OnInit {
     this.gettingPosts();
   }
 
-  gettingPosts() {
-    this.postService.getPosts().subscribe(
+  async gettingPosts() {
+    await this.postService.getPosts().subscribe(
       (response) => {
         this.posts = response;
         console.log(this.posts);
@@ -26,5 +26,6 @@ export class HomeRouteComponent implements OnInit {
         console.log('Request failed with error: ' + error);
       }
     );
+    console.log(this.posts);
   }
 }

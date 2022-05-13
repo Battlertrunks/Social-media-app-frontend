@@ -1,3 +1,11 @@
-<form>
+<form #registerForm="ngForm" (ngSubmit)="submitHandler()" autocomplete="off">
   <label for="title">Title:</label>
+  <input type="text" name="title" id="title" [(ngModel)]="post.title" />
+  <textarea
+    name="body"
+    id="body"
+    placeholder="Enter text..."
+    [(ngModel)]="post.body"
+  ></textarea>
+  <button type="submit">Submit</button>
 </form>
